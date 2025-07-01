@@ -113,14 +113,12 @@ pub fn db_appendtag(database: &HashMap<String, HashSet<String>>, filepath: &str,
     }
 }
 
-
 pub fn or_tag(a: &HashSet<String>, b: &HashSet<String>) -> HashSet<String> {
     let tagged: HashSet<String> = a.union(b)
         .map(|tagged_file_path| tagged_file_path.to_owned())
         .collect();
     return tagged;
 }
- 
 
 pub fn and_tag(a: &HashSet<String>, b: &HashSet<String>) -> HashSet<String> {
     let tagged: HashSet<String> = a.intersection(b)
